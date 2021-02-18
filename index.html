@@ -10,8 +10,16 @@
 </head>
 <body>
     <div id="app">
+        <section class="produtos">
+            <div v-for="produto in produtos" class="produto">
+                <img :src="produto.img" :key="produto.id" :alt="produto.nome">
+                <div class="produto-info">
+                   <p><span>{{produto.preco}}</span></p>
+                   <h2><span>{{produto.nome}}</span></h2> 
+                </div>
+            </div>
+        </section>
         <h1>{{mensagem}}</h1>
-        {{produtos}}
     </div>
     <script src="jS/JsMain.js"></script>
 </body>

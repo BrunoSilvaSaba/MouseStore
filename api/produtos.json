@@ -14,16 +14,23 @@
     },
 
     {
-        "id": "som",
-        "nome": "som",
+        "id": "smartphone",
+        "nome": "smartphone",
         "preco": "10000",
-        "img": "./api/produtos/som/som.jpg"
+        "img": "./api/produtos/smartphone/smartphone.jpg"
     },
 
     {
-        "id": "tv",
-        "nome": "tv",
+        "id": "smartwatch",
+        "nome": "smartwatch",
         "preco": "4000000",
-        "img": "./api/produtos/tv/tv.jpg"
+        "img": "./api/produtos/smartwatch/smartwatch.jpg"
+    },
+
+    {
+        "id": "speaker",
+        "nome": "speaker",
+        "preco": "500000",
+        "img": "./api/produtos/speaker/speaker.jpg"
     }
 ]
