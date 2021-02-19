@@ -9,12 +9,18 @@
     <title>MouseStore</title>
 </head>
 <body>
+
+
     <div id="app">
+        <section class="modal">
+            {{produto}}
+        </section>
+
         <section class="produtos">
-            <div v-for="produto in produtos" class="produto">
+            <div v-for="produto in produtos" @click="fetchProduto(produto.id)" class="produto">
                 <img :src="produto.img" :key="produto.id" :alt="produto.nome" class="produto_img">
                 <div class="produto-info">
-                   <p><span>{{produto.preco}}</span></p>
+                   <p><span>{{produto.preco | filtroPreco}}</span></p>
                    <h2><span>{{produto.id}}</span></h2> 
                 </div>
             </div>
