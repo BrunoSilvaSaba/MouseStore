@@ -1,0 +1,35 @@
+body {
+    background: linear-gradient(to right, #1a1a1a 30%, #fff 30%);
+    color: #1d1d1d;
+}
+
+.produtos {
+    max-width: 900px;
+    margin: 100px auto 0 auto;
+}
+
+.produto {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 2rem rgba( 0, 0, 0, .1);
+}
+
+.produtos div + div {
+    margin-top: 60px;
+}
+
+.produto_img {
+    max-width: 400px;
+    padding-right: 2rem;
+}
+
+.produtos p {
+    color: #615b5b;
+    font-size: 14px;
+}
+
+.produtos h2 {
+    color: #1d1d1d;
+    font-size: 24px;
+}
