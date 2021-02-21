@@ -13,7 +13,18 @@
 
     <div id="app">
         <section class="modal">
-            {{produto}}
+            <div id="conteiner-modal">
+                <div class="modal-img">
+                    <img :src="produto.img" alt="">
+                </div>
+                <ul class="avaliacoes-clientes">
+                    <li v-for="avaliacao in produto.avaliacoes">
+                     <h2>{{avaliacao.nome}}</h2>
+                     <h6>{{avaliacao.estrelas}}</h6>
+                     <p>{{avaliacao.descricao}}</p>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section class="produtos">
