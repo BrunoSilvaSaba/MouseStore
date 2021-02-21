@@ -12,19 +12,25 @@
 
 
     <div id="app">
-        <section class="modal" v-if="true">
+        <section class="modal" v-if="produto">
+
             <div class="container-modal">
+                <button class="btn-fechar-modal" @click="produto = false">fechar</button>
                 <div class="modal-img">
                     <img :src="produto.img" alt="">
                 </div>
-                <ul class="avaliacoes-clientes">
-                    <li v-for="avaliacao in produto.avaliacoes">
-                     <h2>{{avaliacao.nome}}</h2>
-                     <h6>{{avaliacao.estrelas}}</h6>
-                     <p>{{avaliacao.descricao}}</p>
-                    </li>
-                </ul>
+                <div>
+                    <ul class="avaliacoes-clientes">
+                        <li v-for="avaliacao in produto.avaliacoes">
+                         <h2>{{avaliacao.nome}}</h2>
+                         <h6>{{avaliacao.estrelas}}</h6>
+                         <p>{{avaliacao.descricao}}</p>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
+
         </section>
 
         <section class="produtos">
@@ -36,7 +42,7 @@
                 </div>
             </div>
         </section>
-        <h1>{{mensagem}}</h1>
+        
     </div>
     <script src="jS/JsMain.js"></script>
 </body>
