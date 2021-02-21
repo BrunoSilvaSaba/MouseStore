@@ -7,6 +7,7 @@ body {
 .produtos {
     max-width: 900px;
     margin: 100px auto 0 auto;
+    
 }
 
 .produto {
@@ -14,6 +15,7 @@ body {
     align-items: center;
     background: #fff;
     box-shadow: 0 0 2rem rgba( 0, 0, 0, .1);
+    cursor: pointer;
 }
 
 .produtos div + div {
@@ -90,4 +92,5 @@ body {
     padding: 10px 20px 10px 20px;
     color: #fff;
     background: rgba(0,0,0, .7);
+    cursor: pointer;
 }
