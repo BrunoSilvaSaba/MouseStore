@@ -43,4 +43,10 @@ body {
 .avaliacoes-clientes {
   color: #fff;
 }
+
+.modal {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
 /*# sourceMappingURL=main.css.map */
