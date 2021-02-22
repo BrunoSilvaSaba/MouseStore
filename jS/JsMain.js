@@ -4,9 +4,7 @@ const vm = new Vue({
         mensagem: 'o vue está funfando',
         produtos: [],
         produto: false, 
-        carrinho: [],
-        carrinhoTotal: 0, 
-        
+        carrinho: []
         
     },
     filters: {
@@ -14,6 +12,19 @@ const vm = new Vue({
             return `R$ ${value},00`
         }
     },
+    computed:{
+        carrinhoTotal() {
+            let total = 0;
+            if(this.carrinho.length) {
+                this.carrinho.forEach(item => {
+                    total += item.preco;
+                })
+            }
+
+            return total;
+        }
+    },
+
     methods: {
         fetchProdutos() {
             fetch('./api/produtos.json')
