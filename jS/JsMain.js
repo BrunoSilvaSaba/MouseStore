@@ -24,7 +24,6 @@ const vm = new Vue({
             return total;
         }
     },
-
     methods: {
         fetchProdutos() {
             fetch('./api/produtos.json')
@@ -54,9 +53,20 @@ const vm = new Vue({
         },
         removerItemCarrinho(index) {
             this.carrinho.splice(index, 1);
+        }, 
+        checarSaveLocal() {
+            if(window.localStorage.carrinho) {
+                this.carrinho = JSON.parse(window.localStorage.carrinho);
+            }
+        }
+    },
+    watch: {
+        carrinho() {
+            window.localStorage.carrinho = JSON.stringify(this.carrinho);
         }
     },
     created() {
         this.fetchProdutos();
+        this.checarSaveLocal();
     }
 })
