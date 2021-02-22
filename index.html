@@ -12,6 +12,30 @@
 
 
     <div id="app">
+
+        <header class="header">
+            <h3>Mouse_Store</h3>
+            <div id="carrinho">
+                {{carrinhoTotal | filtroPreco}} | {{carrinho.length}}
+                <ul>
+                    <li v-for="(item, index) in carrinho ">
+                        <p>{{item.nome}}</p>
+                        <button @click="removerItemCarrinho(index)">remover</button>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="produtos">
+            <div v-for="produto in produtos" @click="abrirModal(produto.id)" class="produto">
+                <img :src="produto.img" :key="produto.id" :alt="produto.nome" class="produto_img">
+                <div class="produto-info">
+                   <p><span>{{produto.preco | filtroPreco}}</span></p>
+                   <h2><span>{{produto.id}}</span></h2> 
+                </div>
+            </div>
+        </section>
+        
         <section class="modal" v-if="produto">
 
             <div class="container-modal">
@@ -23,26 +47,16 @@
                     <ul class="avaliacoes-clientes">
                         <li v-for="avaliacao in produto.avaliacoes">
                          <h2>{{avaliacao.nome}}</h2>
-                         <h6>{{avaliacao.estrelas}}</h6>
                          <p>{{avaliacao.descricao}}</p>
                         </li>
                     </ul>
+                    <button class="btn-add-carrinho" @click="adicionarItemCarrinho">Adicionar Item</button>
                 </div>
-
             </div>
 
         </section>
 
-        <section class="produtos">
-            <div v-for="produto in produtos" @click="fetchProduto(produto.id)" class="produto">
-                <img :src="produto.img" :key="produto.id" :alt="produto.nome" class="produto_img">
-                <div class="produto-info">
-                   <p><span>{{produto.preco | filtroPreco}}</span></p>
-                   <h2><span>{{produto.id}}</span></h2> 
-                </div>
-            </div>
-        </section>
-        
+
     </div>
     <script src="jS/JsMain.js"></script>
 </body>

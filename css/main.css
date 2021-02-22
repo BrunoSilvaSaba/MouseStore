@@ -4,6 +4,26 @@ body {
   color: #1d1d1d;
 }
 
+.header {
+  width: 100%;
+  color: #1d1d1d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 900px;
+  padding: 00 200px 00;
+}
+
+.header h3 {
+  color: #fff;
+}
+
 .produtos {
   max-width: 900px;
   margin: 100px auto 0 auto;
@@ -66,11 +86,50 @@ body {
   padding: 28px;
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
+  -webkit-animation: fadeIn .3s forwards;
+          animation: fadeIn .3s forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50px, 0, 0);
+            transform: translate3d(50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0, 0);
+            transform: translate3d(0px, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50px, 0, 0);
+            transform: translate3d(50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0, 0);
+            transform: translate3d(0px, 0, 0);
+  }
 }
 
 .modal-img img {
   max-width: 400px;
   border-radius: 2rem;
+}
+
+.btn-add-carrinho {
+  padding: 10px 20px 10px 20px;
+  margin: 00px 00px 00px 3rem;
+  border: none;
+  -webkit-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  background: #1d1d1d;
+  color: #fff;
+  cursor: pointer;
 }
 
 .container-modal {
@@ -83,10 +142,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: white;
+  background: -webkit-gradient(linear, left top, right top, color-stop(40%, #1a1a1a), color-stop(30%, #fff));
+  background: linear-gradient(to right, #1a1a1a 40%, #fff 30%);
   border-radius: 2rem;
-  -webkit-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.7);
-          box-shadow: 0 0 2rem rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.023);
+          box-shadow: 0 0 2rem rgba(0, 0, 0, 0.023);
 }
 
 .btn-fechar-modal {

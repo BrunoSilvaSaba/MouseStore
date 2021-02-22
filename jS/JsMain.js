@@ -2,8 +2,11 @@ const vm = new Vue({
     el: '#app',
     data: {
         mensagem: 'o vue está funfando',
-        produtos: {},
-        produto: false
+        produtos: [],
+        produto: false, 
+        carrinho: [],
+        carrinhoTotal: 0, 
+        
         
     },
     filters: {
@@ -25,6 +28,21 @@ const vm = new Vue({
             .then( r => {
                 this.produto = r;
             })
+        },
+        abrirModal(id) {
+            this.fetchProduto(id);
+            window.scrollTo({ 
+                top: 0,
+                behavior: "smooth"
+            })
+        },
+        adicionarItemCarrinho() {
+            this.produto.estoque--;
+            const {id, nome, preco } = this.produto;
+            this.carrinho.push({id, nome, preco});
+        },
+        removerItemCarrinho(index) {
+            this.carrinho.splice(index, 1);
         }
     },
     created() {

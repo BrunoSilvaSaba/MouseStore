@@ -4,6 +4,25 @@ body {
     color: #1d1d1d;
 }
 
+
+//========================================================== Header =========================================================//
+
+
+.header {
+    width: 100%;
+    color: #1d1d1d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    padding:  00 200px 00;
+    
+} 
+
+.header h3 {
+    color: #fff;
+}
+
 .produtos {
     max-width: 900px;
     margin: 100px auto 0 auto;
@@ -65,11 +84,36 @@ body {
     padding: 28px;
     background: rgba(0, 0, 0, .7);
     width: 100%;
+    animation: fadeIn .3s forwards; //ativando animação
+    
+}
+
+
+
+@keyframes fadeIn {  //criando animação
+    from {
+        opacity: 0;
+        transform: translate3d(50px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(00px, 0, 0);
+    }
 }
 
 .modal-img img {
     max-width: 400px;
     border-radius: 2rem;
+}
+
+.btn-add-carrinho {
+    padding: 10px 20px 10px 20px;
+    margin: 00px 00px 00px 3rem;
+    border: none;
+    box-shadow: 0 0 2rem rgba( 0, 0, 0, .2);
+    background: #1d1d1d;
+    color: #fff;
+    cursor: pointer;
 }
 
 .container-modal {
@@ -78,9 +122,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    background: rgba(255, 255, 255, 10);
+    background: linear-gradient(to right, #1a1a1a 40%, #fff 30%);
     border-radius: 2rem;
-    box-shadow: 0 0 2rem rgba( 0, 0, 0, .7)
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.023)
 
 }
 
