@@ -4,7 +4,8 @@ const vm = new Vue({
         mensagem: 'o vue está funfando',
         produtos: [],
         produto: false, 
-        carrinho: []
+        carrinho: [],
+        carrinhoAtivo: false
         
     },
     filters: {

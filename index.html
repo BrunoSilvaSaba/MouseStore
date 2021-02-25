@@ -16,8 +16,9 @@
         <header class="header">
             <h3>Mouse_Store</h3>
             <div id="carrinho">
-                {{carrinhoTotal | filtroPreco}} | {{carrinho.length}}
+                {{carrinhoTotal | filtroPreco}} | {{carrinho.length}} 
             </div>
+            <button href="" btn_carrinho_ativar @click="carrinhoAtivo = true">Entrar</button>
         </header>
 
         <section class="produtos">
@@ -31,17 +32,20 @@
         </section>
 
 
-        <section class="carrinho_modal">
+        <section class="carrinho_modal" :class="{ativo: carrinhoAtivo}">
             <div class="container_carrinho">
-                <div v-if="carrinho.length > 0">
+                <template v-if="carrinho.length > 0">
                     <ul>
-                        <li v-for="(item, index) in carrinho">
-                            <p>{{item.nome}} | {{ item.preco | filtroPreco}}</p>
-                            <button @click="removerItemCarrinho(index)">remover</button>
+                        <li v-for="(item, index) in carrinho" class="item-carrinho">
+                            <p>{{item.nome}}</p>
+                            <p>{{ item.preco | filtroPreco}}</p>
+                            <button @click="removerItemCarrinho(index)" class="btn-r-item-carrinho">remover</button>
                         </li>
                     </ul>
-                </div>
-                <p v-else>Carrinho está vazio</p>
+                </template>
+                <template v-else>Carrinho está vazio</template>
+                <p> {{carrinhoTotal | filtroPreco}} </p>
+                <button class="btn-fechar-modal" @click="carrinhoAtivo = false">X</button>
             </div>
         </section>
 
@@ -49,7 +53,6 @@
         <section class="modal" v-if="produto">
 
             <div class="container-modal">
-                <button class="btn-fechar-modal" @click="produto = false">fechar</button>
                 <div class="modal-img">
                     <img :src="produto.img" alt="">
                 </div>
@@ -62,6 +65,7 @@
                     </ul>
                     <button class="btn-add-carrinho" @click="adicionarItemCarrinho">Adicionar Item</button>
                 </div>
+                <button class="btn-fechar-modal" @click="produto = false">fechar</button>
             </div>
 
         </section>

@@ -86,8 +86,8 @@ body {
   padding: 28px;
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
-  -webkit-animation: fadeIn .3s forwards;
-          animation: fadeIn .3s forwards;
+  -webkit-animation: fadeIn .8s forwards;
+          animation: fadeIn .8s forwards;
 }
 
 @-webkit-keyframes fadeIn {
@@ -161,5 +161,79 @@ body {
   border-radius: 50%;
   width: 80px;
   height: 80px;
+}
+
+.carrinho_modal {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: auto;
+  color: #1d1d1d;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-animation: fadeInDown .5s forwards;
+          animation: fadeInDown .5s forwards;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50px, 0, 0px);
+            transform: translate3d(50px, 0, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transition: translate3d(0px, 0, 0);
+    transition: translate3d(0px, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50px, 0, 0px);
+            transform: translate3d(50px, 0, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transition: translate3d(0px, 0, 0);
+    transition: translate3d(0px, 0, 0);
+  }
+}
+
+.carrinho_modal {
+  display: none;
+}
+
+.carrinho_modal.ativo {
+  display: block;
+}
+
+.container_carrinho {
+  max-width: 800px;
+  padding: 20px;
+  background: #fff;
+  margin: 10px auto 10px auto;
+  border-radius: 2rem;
+}
+
+.item-carrinho {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.btn-r-item-carrinho {
+  height: 26px;
+  border: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  background: #fff;
 }
 /*# sourceMappingURL=main.css.map */

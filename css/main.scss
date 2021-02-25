@@ -84,7 +84,7 @@ body {
     padding: 28px;
     background: rgba(0, 0, 0, .7);
     width: 100%;
-    animation: fadeIn .3s forwards; //ativando animação
+    animation: fadeIn .8s forwards; //ativando animação
     
 }
 
@@ -140,4 +140,58 @@ body {
     border-radius: 50%;
     width: 80px;
     height: 80px;
+}
+
+.carrinho_modal {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: auto;
+    color: #1d1d1d;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    animation: fadeInDown .5s forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(50px, 00, 00px)
+    }
+    to {
+        opacity: 1;
+        transition: translate3d(00px, 00, 00);
+    }
+}
+
+.carrinho_modal {
+    display: none;
+}
+
+.carrinho_modal.ativo {
+    display: block;
+    
+}
+
+.container_carrinho {
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    margin: 10px auto 10px auto;
+    border-radius: 2rem;
+}
+
+.item-carrinho {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-r-item-carrinho {
+    height: 26px;
+    border: none;
+    box-shadow: 0 0 05px rgba(0, 0, 0, .7);
+    background: #fff;
 }
