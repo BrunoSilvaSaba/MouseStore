@@ -17,12 +17,6 @@
             <h3>Mouse_Store</h3>
             <div id="carrinho">
                 {{carrinhoTotal | filtroPreco}} | {{carrinho.length}}
-                <ul>
-                    <li v-for="(item, index) in carrinho ">
-                        <p>{{item.nome}}</p>
-                        <button @click="removerItemCarrinho(index)">remover</button>
-                    </li>
-                </ul>
             </div>
         </header>
 
@@ -35,6 +29,22 @@
                 </div>
             </div>
         </section>
+
+
+        <section class="carrinho_modal">
+            <div class="container_carrinho">
+                <div v-if="carrinho.length > 0">
+                    <ul>
+                        <li v-for="(item, index) in carrinho">
+                            <p>{{item.nome}} | {{ item.preco | filtroPreco}}</p>
+                            <button @click="removerItemCarrinho(index)">remover</button>
+                        </li>
+                    </ul>
+                </div>
+                <p v-else>Carrinho está vazio</p>
+            </div>
+        </section>
+
         
         <section class="modal" v-if="produto">
 
